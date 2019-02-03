@@ -1,3 +1,4 @@
+//import { link } from "fs";
 //import {parse} from 'papaparse';
 //import {readFileSync} from 'fs';
 // /// <reference path="./node_modules/@types/papaparse/index.d.ts" />
@@ -45,7 +46,7 @@ function clearList(root) {
 function search() {
     var input = document.getElementById("search-input");
     var filter = input.value.toUpperCase();
-    var testlist = ['Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska'];
+    var testlist = ['NCSU', 'Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska'];
     var displayList = document.getElementById("search-results-list");
     // clear the list
     clearList(displayList);
@@ -62,7 +63,15 @@ function search() {
             var liNode = document.createElement('li');
             var textNode = document.createTextNode(item);
             liNode.appendChild(textNode);
-            displayList.appendChild(liNode);
+            var a = document.createElement('a');
+            if (item.toUpperCase() == 'NCSU') {
+                a.href = 'detail.html';
+            }
+            else {
+                a.href = '#';
+            }
+            a.append(liNode);
+            displayList.appendChild(a);
         }
     }
 }

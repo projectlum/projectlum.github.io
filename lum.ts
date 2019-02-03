@@ -1,3 +1,5 @@
+//import { link } from "fs";
+
 //import {parse} from 'papaparse';
 //import {readFileSync} from 'fs';
 
@@ -51,7 +53,7 @@ function search(): void {
     let input: any = document.getElementById("search-input");
     let filter: string = input.value.toUpperCase();
 
-    let testlist = ['Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska']
+    let testlist = ['NCSU', 'Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska']
     let displayList = document.getElementById("search-results-list")
 
     // clear the list
@@ -69,7 +71,16 @@ function search(): void {
             let liNode = document.createElement('li');
             let textNode = document.createTextNode(item);
             liNode.appendChild(textNode);
-            displayList.appendChild(liNode);
+
+            let a = document.createElement('a');
+            if (item.toUpperCase() == 'NCSU') {
+                a.href = 'detail.html';
+            } else {
+                a.href = '#'
+            }
+            a.append(liNode);
+
+            displayList.appendChild(a);
         }
     }
 }
