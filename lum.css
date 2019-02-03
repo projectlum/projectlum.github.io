@@ -15,7 +15,8 @@ body {
 
 #container {
     width: 100%;
-    margin: 0 3em;
+    padding: 0 3em 0 0;
+    margin-top: 2em;
     display: flex;
     flex-direction: column;
 }
@@ -24,20 +25,51 @@ body {
     display: flex;
     background-color: inherit;
     width: 100%;
-    height: 2em;
+    position: relative;
+}
+
+#search-results {
+    position: absolute;
+    top: 3em;
+    width: 100%;
+}
+
+#search-results-list {
+    list-style-type: none;
+    background-color: gray;
+    opacity: 0.5;
+    padding: 0;
+    /*padding: 0.5em 0 0.5em 3em;
+    visibility: hidden;*/
+}
+
+#search-results-list>li {
+    padding: 1em 0 1em 3em;
+    border: 2px solid rgba(0,0,0,0);
+}
+
+#search-results-list>li:hover {
+    border-color: red;
 }
 
 #search-input {
     background-image: url(graphics/search_icon.png);
-    background-position: 1em 0.5em;
+    background-position: 1em 1em;
     background-size: 1em;
     background-repeat: no-repeat;
     background-color: inherit;
     width: 100%;
     font-size: 1em;
     padding: 1em 1em 1em 3em;
-    border: 1px solid black;
+    border: 1px solid gray;
     margin-bottom: 12px;
+    color: white;
+}
+
+#search-input:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0px 4px 18px 4px black;
 }
 
 #main-content {
@@ -58,7 +90,7 @@ body {
 
 #globe {
     display: flex;
-    content:url(graphics/LUM_GLOBE_01.png);
+    content:url(graphics/LUM_GLOBE_02.png);
     width: 70%;
     align-self: flex-end;
 }
@@ -72,11 +104,12 @@ body {
     display: flex;
     flex-direction: column;
     white-space: nowrap;
+    padding: 0 1em;
 }
 
 #navigation>.button {
     display:flex;
-    padding: 1em;
+    padding: 2em;
 
     border: none;
     
@@ -85,10 +118,14 @@ body {
     
     cursor: pointer;
     background-color: inherit;
+
+    align-self: center;
 }
 
-#navigation>#icon {
-    content:url(graphics/LUM_WEBSITE_LOGO_01.png);
+#navigation>#logo {
     width: 4em;
-    align-self: center;
+}
+
+#navigation>.icon {
+    width: auto;
 }

@@ -7,7 +7,7 @@
     <title>LUM</title>
     
     <script src="lum.js"></script>
-    <link rel="shortcut icon" href="graphics/LUM_TAB_ICON_2.png"/>
+    <link rel="shortcut icon" href="graphics/LUM_Tab_Icon_03.png"/>
     <link rel="stylesheet" type="text/css" href="lum.css">
     
 </head>
@@ -15,16 +15,22 @@
 <body>
 
     <div id="navigation">
-        <div id="icon" class="button">LUM</div>
-        <div class="button">Home</div>
-        <div class="button">Data</div>
-        <div class="button">About Us</div>
+        <div class="button" id="logo" style="content:url(graphics/LUM_WEBSITE_LOGO_01.png)">LUM</div>
+        <div class="button icon" style="content:url(graphics/Lum_Site_Icon_Menu.png)">Home</div>
+        <div class="button icon">Data</div>
+        <div class="button icon">About Us</div>
     </div>
 
 <div id="container">
 
     <div id="search-bar">
-        <input type="text" id="search-input" onkeyup="myFunction()" placeholder="Search" title="Search for anything">
+        <input type="text" id="search-input" onkeyup="search()" placeholder="Search" title="Search for anything">
+
+        <div id="search-results">
+            <ul id="search-results-list">
+
+            </ul>
+        </div>
     </div>
 
     <div id="main-content">
