@@ -42,7 +42,6 @@ function search(): void {
             let textNode = document.createTextNode(item);
             liNode.appendChild(textNode);
             displayList.appendChild(liNode);
-            console.log(item + 'is a valid search return thing');
         }
     }
 }

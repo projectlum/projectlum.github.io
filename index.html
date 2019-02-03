@@ -10,21 +10,24 @@
     <link rel="shortcut icon" href="graphics/LUM_Tab_Icon_03.png"/>
     <link rel="stylesheet" type="text/css" href="lum.css">
     
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
 </head>
 
 <body>
 
     <div id="navigation">
-        <div class="button" id="logo" style="content:url(graphics/LUM_WEBSITE_LOGO_01.png)">LUM</div>
-        <div class="button icon" style="content:url(graphics/Lum_Site_Icon_Menu.png)">Home</div>
-        <div class="button icon">Data</div>
-        <div class="button icon">About Us</div>
+        <i class="button" id="logo" style="content:url(graphics/LUM_WEBSITE_LOGO_01.png)">LUM</i>
+        <i class="fas fa-bars icon"></i>
+        <i class="fas fa-bookmark icon"></i>
+        <i class="fas fa-share-alt icon"></i>
+        <i class="fas fa-info icon"></i>
     </div>
 
 <div id="container">
 
     <div id="search-bar">
-        <input type="text" id="search-input" onkeyup="search()" placeholder="Search" title="Search for anything">
+        <input type="text" id="search-input" onkeyup="search()" placeholder="Search">
 
         <div id="search-results">
             <ul id="search-results-list">

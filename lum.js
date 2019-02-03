@@ -37,7 +37,6 @@ function search() {
             var textNode = document.createTextNode(item);
             liNode.appendChild(textNode);
             displayList.appendChild(liNode);
-            console.log(item + 'is a valid search return thing');
         }
     }
 }
