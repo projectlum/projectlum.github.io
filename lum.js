@@ -1,3 +1,7 @@
+//import {parse} from 'papaparse';
+//import {readFileSync} from 'fs';
+// /// <reference path="./node_modules/@types/papaparse/index.d.ts" />
+// /// <reference path="./node_modules/@types/node/index.d.ts" />
 var Startup = /** @class */ (function () {
     function Startup() {
     }
@@ -8,6 +12,28 @@ var Startup = /** @class */ (function () {
     return Startup;
 }());
 Startup.main();
+var DataPoint = /** @class */ (function () {
+    function DataPoint() {
+        this.date = 0;
+        this.energyConsumption = 0;
+        this.waterConsumption = 0;
+        this.energyUnits = '';
+        this.waterUnits = '';
+    }
+    return DataPoint;
+}());
+var Community = /** @class */ (function () {
+    function Community() {
+        this.name = '';
+        this.type = '';
+        this.dataPoints = [];
+    }
+    return Community;
+}());
+// function readDataSource(fp: string) {
+//     let file = readFileSync('sample.csv', 'utf8');
+//     parse(file, {complete: (result) => console.dir(result.data)});
+// }
 function printme(val) {
     console.log(val);
 }

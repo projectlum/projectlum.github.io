@@ -96,6 +96,13 @@ body {
     align-self: flex-end;
 }
 
+
+#plot {
+    display: flex;
+    width: 100%;
+    align-self: flex-end;
+}
+
 #navigation {
     display: flex;
     flex-direction: column;

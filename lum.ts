@@ -1,3 +1,9 @@
+//import {parse} from 'papaparse';
+//import {readFileSync} from 'fs';
+
+// /// <reference path="./node_modules/@types/papaparse/index.d.ts" />
+// /// <reference path="./node_modules/@types/node/index.d.ts" />
+
 class Startup {
     public static main(): number {
         console.log('Hello you');
@@ -6,6 +12,28 @@ class Startup {
 }
 
 Startup.main();
+
+
+class DataPoint {
+    public date = 0;
+    public energyConsumption = 0;
+    public waterConsumption = 0;
+    public energyUnits = '';
+    public waterUnits = '';
+}
+
+
+class Community {
+    public name = '';
+    public type = '';
+    public dataPoints = [];
+}
+
+
+// function readDataSource(fp: string) {
+//     let file = readFileSync('sample.csv', 'utf8');
+//     parse(file, {complete: (result) => console.dir(result.data)});
+// }
 
 function printme(val: string): void {
     console.log(val)
