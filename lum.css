@@ -91,7 +91,7 @@ body {
 
 #globe {
     display: flex;
-    content:url(graphics/LUM_GLOBE_02.png);
+    content:url(graphics/Lum_Globe_02.png);
     width: 70%;
     align-self: flex-end;
 }
