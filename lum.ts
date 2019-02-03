@@ -53,7 +53,7 @@ function search(): void {
     let input: any = document.getElementById("search-input");
     let filter: string = input.value.toUpperCase();
 
-    let testlist = ['NCSU', 'Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska']
+    let testlist = ['Click through example', 'NCSU', 'Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska']
     let displayList = document.getElementById("search-results-list")
 
     // clear the list
@@ -75,6 +75,8 @@ function search(): void {
             let a = document.createElement('a');
             if (item.toUpperCase() == 'NCSU') {
                 a.href = 'detail.html';
+            } else if (item.toUpperCase() == 'CLICK THROUGH EXAMPLE') {
+                a.href = 'click_through/home.html';
             } else {
                 a.href = '#'
             }

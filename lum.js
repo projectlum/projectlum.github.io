@@ -46,7 +46,7 @@ function clearList(root) {
 function search() {
     var input = document.getElementById("search-input");
     var filter = input.value.toUpperCase();
-    var testlist = ['NCSU', 'Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska'];
+    var testlist = ['Click through example', 'NCSU', 'Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska'];
     var displayList = document.getElementById("search-results-list");
     // clear the list
     clearList(displayList);
@@ -66,6 +66,9 @@ function search() {
             var a = document.createElement('a');
             if (item.toUpperCase() == 'NCSU') {
                 a.href = 'detail.html';
+            }
+            else if (item.toUpperCase() == 'CLICK THROUGH EXAMPLE') {
+                a.href = 'click_through/home.html';
             }
             else {
                 a.href = '#';
