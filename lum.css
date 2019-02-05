@@ -11,6 +11,20 @@ h1 {
     font-weight: normal;
 }
 
+h2 {
+    font-size: 4em;
+    font-weight: normal;
+    text-align: center;
+}
+
+p.emphasis {
+    font-size: 2em;
+    font-weight: normal;
+    text-align: center;
+    width: 70%;
+    align-self: center;
+}
+
 
 body {
     margin: 20px 0;
@@ -127,6 +141,7 @@ body {
     flex-direction: column;
     white-space: nowrap;
     padding: 0 1em;
+    align-items: center;
 }
 
 #navigation i,
@@ -148,15 +163,16 @@ body {
 #navigation>a>#logo {
     width: 6em;
     padding: 2em;
+    content:url(graphics/LUM_WEBSITE_LOGO_01.png);
 }
 
-#navigation>.icon {
+#navigation>a>.icon {
     width: auto;
     color: gray;
     font-size: 2em;
 }
 
-#navigation>.icon:hover {
+#navigation>a>.icon:hover {
     color: white;
 }
 
@@ -182,6 +198,7 @@ body {
 .text-block-reverse p {
     display: flex;
     min-width: 30%;
+    font-size: 1.2em;
 }
 
 .text-block img,

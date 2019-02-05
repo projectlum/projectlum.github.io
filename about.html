@@ -18,19 +18,19 @@
 
 <body>
 
-    <div id="navigation">
-            <a href="index.html"><i class="button" id="logo" style="content:url(graphics/LUM_WEBSITE_LOGO_01.png)">LUM</i></a>
-        <i class="fas fa-bars icon"></i>
-        <i class="fas fa-chart-bar icon"></i>
-        <i class="fas fa-bookmark icon"></i>
-        <i class="fas fa-share-alt icon"></i>
-        <i class="fas fa-info icon"></i>
-    </div>
+<div id="navigation">
+    <a href="index.html"><i class="button" id="logo"></i></a>
+    <a href="#"><i class="fas fa-bars icon"></i></a>
+    <a href="#"><i class="fas fa-chart-bar icon"></i></a>
+    <a href="#"><i class="fas fa-bookmark icon"></i></a>
+    <a href="#"><i class="fas fa-share-alt icon"></i></a>
+    <a href="about.html"><i class="fas fa-info icon"></i></a>
+</div>
 
 <div id="container">
 
     <div id="search-bar">
-        <input type="text" id="search-input" onkeyup="search()" placeholder="Search">
+        <input type="text" id="search-input" onkeyup="search()" onblur="hideSearchResults()" placeholder="Search">
 
         <div id="search-results">
             <ul id="search-results-list">
@@ -43,18 +43,49 @@
 
         <h1>About Us</h1>
 
+        <p class="emphasis">
+            There is so much data about sustainability that exists, 
+            but there is no was to easily grasp the current situation.
+        </p>
+        
+        <p class="emphasis">Project LUM changes that.</p>
+
+        <!-- <h2>Background</h2> -->
+
         <div class="text-block">
-            <p>Hi I am a paragraph of text that explains what we do any why we exist</p>
+            <p>While brainstorming ideas for this Make-A-Thon, 
+                our chief goal was to make something that was actually impactful. 
+                So, we set out to find some of the biggest environmental problems. 
+                We found a hodgepodge of reports from the local level, all the way up to the international stage. 
+                We also found resources that could be really useful if we paid a lot of money for them, 
+                or had degrees in information science. However, despite hours of research, 
+                the opaque and complex patchwork of resources didn’t allow us to get a very good picture of the current 
+                sustainability landscape and where our time and resources would be best spent.
+            </p>
             <img src="graphics/LUM_Tab_Icon_03.png"/>
         </div>
 
         <div class="text-block-reverse">
-            <p>I am a second paragraph of text that explains what we do any why we exist</p>
+            <p>This seemed like a problem. 
+                If we couldn’t find the numbers we needed for a Make-A-Thon, 
+                then what was it like to be a researcher, an activist group, a local government, 
+                or a country seeking information on sustainability metrics. It seemed like a 
+                problem so urgent, in fact, that we decided we needed to do something about it. 
+                And with that, we developed the beginnings of Project LUM, a non-profit with the 
+                goal of providing intuitive statistical summaries of sustainability metrics to the globe.
+            </p>
             <img src="graphics/LUM_Tab_Icon_03.png"/>
         </div>
+
+        <p class="emphasis">Project LUM is certainly environmentally sustainable: 
+            all we need is the internet, our computers, and teamwork. We expect 
+            the positive environmental impact of the site could be limitless, as it’s only 
+            limited by the imaginations of those who decide to use it as their tool.
+        </p>>
 
     </div>
     
 </div>
+
 </body>
 </html>

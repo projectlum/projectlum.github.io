@@ -35,10 +35,6 @@ class Community {
 //     parse(file, {complete: (result) => console.dir(result.data)});
 // }
 
-function printme(val: string): void {
-    console.log(val)
-}
-
 
 function clearList(root: any): void {
     while( root.firstChild ){
@@ -73,7 +69,6 @@ function search(): void {
     let input: any = document.getElementById("search-input");
     let filter: string = input.value.toUpperCase();
 
-    let testlist = ['About Us', 'Click through example', 'NCSU', 'Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska']
     let displayList = document.getElementById("search-results-list")
 
     let searchList = [];
@@ -81,10 +76,10 @@ function search(): void {
     searchList.push(new SearchItem('About Us', 'about.html'))
     searchList.push(new SearchItem('Click through example', 'click_through/home.html'))
     searchList.push(new SearchItem('Hong Kong', 'detail.html'))
-    searchList.push(new SearchItem('Raleigh', '#'))
-    searchList.push(new SearchItem('Chapel Hill', '#'))
+    searchList.push(new SearchItem('Raleigh', ''))
+    searchList.push(new SearchItem('Chapel Hill', ''))
 
-    // clear the list
+    // clear the list and return if there is nothing in the search bar
     clearList(displayList);
     if (filter.length == 0) {
         displayList.style.visibility = 'hidden';
@@ -107,4 +102,9 @@ function search(): void {
             displayList.appendChild(a);
         }
     }
+}
+
+function hideSearchResults(): void {
+    let displayList = document.getElementById('search-results-list');
+    displayList.style.visibility = 'hidden';
 }

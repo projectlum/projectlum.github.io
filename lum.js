@@ -34,9 +34,6 @@ var Community = /** @class */ (function () {
 //     let file = readFileSync('sample.csv', 'utf8');
 //     parse(file, {complete: (result) => console.dir(result.data)});
 // }
-function printme(val) {
-    console.log(val);
-}
 function clearList(root) {
     while (root.firstChild) {
         root.removeChild(root.firstChild);
@@ -73,16 +70,15 @@ var SearchItem = /** @class */ (function () {
 function search() {
     var input = document.getElementById("search-input");
     var filter = input.value.toUpperCase();
-    var testlist = ['About Us', 'Click through example', 'NCSU', 'Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska'];
     var displayList = document.getElementById("search-results-list");
     var searchList = [];
     searchList.push(new SearchItem('Home', 'index.html'));
     searchList.push(new SearchItem('About Us', 'about.html'));
     searchList.push(new SearchItem('Click through example', 'click_through/home.html'));
     searchList.push(new SearchItem('Hong Kong', 'detail.html'));
-    searchList.push(new SearchItem('Raleigh', '#'));
-    searchList.push(new SearchItem('Chapel Hill', '#'));
-    // clear the list
+    searchList.push(new SearchItem('Raleigh', ''));
+    searchList.push(new SearchItem('Chapel Hill', ''));
+    // clear the list and return if there is nothing in the search bar
     clearList(displayList);
     if (filter.length == 0) {
         displayList.style.visibility = 'hidden';
@@ -103,5 +99,9 @@ function search() {
             displayList.appendChild(a);
         }
     }
+}
+function hideSearchResults() {
+    var displayList = document.getElementById('search-results-list');
+    displayList.style.visibility = 'hidden';
 }
 //# sourceMappingURL=lum.js.map
