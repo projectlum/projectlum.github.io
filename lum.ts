@@ -76,7 +76,7 @@ function search(): void {
     searchList.push(new SearchItem('About Us', 'about.html'))
     searchList.push(new SearchItem('Click through example', 'click_through/home.html'))
     searchList.push(new SearchItem('Hong Kong', 'detail.html'))
-    searchList.push(new SearchItem('Raleigh', ''))
+    searchList.push(new SearchItem('Posters', 'posters.html'))
     searchList.push(new SearchItem('Chapel Hill', ''))
 
     // clear the list and return if there is nothing in the search bar
