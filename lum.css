@@ -185,8 +185,7 @@ body {
 
 
 /* classes */
-.text-block,
-.text-block-reverse {
+.text-block {
     display: flex;
     width: 100%;
     margin: 1em 0;
@@ -198,20 +197,14 @@ body {
     flex-direction: row;
 }
 
-.text-block-reverse {
-    flex-direction: row-reverse;
-}
-
-.text-block p,
-.text-block-reverse p {
+.text-block p {
     display: flex;
     min-width: 30%;
     max-width: 50%;
     font-size: 1.2em;
 }
 
-.text-block img,
-.text-block-reverse img {
+.text-block img {
     display: flex;
     max-width: 40%;
     max-height: 20em;
