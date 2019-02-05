@@ -1,8 +1,7 @@
-//import { link } from "fs";
 //import {parse} from 'papaparse';
-//import {readFileSync} from 'fs';
+//import fs = require("fs");
 // /// <reference path="./node_modules/@types/papaparse/index.d.ts" />
-// /// <reference path="./node_modules/@types/node/index.d.ts" />
+// ///<reference path="./node_modules/@types/node/index.d.ts" />
 var Startup = /** @class */ (function () {
     function Startup() {
     }
@@ -43,11 +42,46 @@ function clearList(root) {
         root.removeChild(root.firstChild);
     }
 }
+var SearchItem = /** @class */ (function () {
+    function SearchItem(name, href) {
+        if (href === void 0) { href = '#'; }
+        this._name = name;
+        this._href = href;
+    }
+    Object.defineProperty(SearchItem.prototype, "name", {
+        get: function () {
+            return this._name;
+        },
+        set: function (newName) {
+            this._name = newName;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SearchItem.prototype, "href", {
+        get: function () {
+            return this._href;
+        },
+        set: function (newHref) {
+            this._href = newHref;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return SearchItem;
+}());
 function search() {
     var input = document.getElementById("search-input");
     var filter = input.value.toUpperCase();
-    var testlist = ['Click through example', 'NCSU', 'Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska'];
+    var testlist = ['About Us', 'Click through example', 'NCSU', 'Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska'];
     var displayList = document.getElementById("search-results-list");
+    var searchList = [];
+    searchList.push(new SearchItem('Home', 'index.html'));
+    searchList.push(new SearchItem('About Us', 'about.html'));
+    searchList.push(new SearchItem('Click through example', 'click_through/home.html'));
+    searchList.push(new SearchItem('Hong Kong', 'detail.html'));
+    searchList.push(new SearchItem('Raleigh', '#'));
+    searchList.push(new SearchItem('Chapel Hill', '#'));
     // clear the list
     clearList(displayList);
     if (filter.length == 0) {
@@ -57,22 +91,14 @@ function search() {
     else {
         displayList.style.visibility = 'visible';
     }
-    for (var i = 0; i < testlist.length; i++) {
-        var item = testlist[i];
-        if (item.toUpperCase().indexOf(filter) > -1) {
+    for (var i = 0; i < searchList.length; i++) {
+        var item = searchList[i];
+        if (item.name.toUpperCase().indexOf(filter) > -1) {
             var liNode = document.createElement('li');
-            var textNode = document.createTextNode(item);
+            var textNode = document.createTextNode(item.name);
             liNode.appendChild(textNode);
             var a = document.createElement('a');
-            if (item.toUpperCase() == 'NCSU') {
-                a.href = 'detail.html';
-            }
-            else if (item.toUpperCase() == 'CLICK THROUGH EXAMPLE') {
-                a.href = 'click_through/home.html';
-            }
-            else {
-                a.href = '#';
-            }
+            a.href = item.href;
             a.append(liNode);
             displayList.appendChild(a);
         }

@@ -6,6 +6,11 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    font-size: 5em;
+    font-weight: normal;
+}
+
 
 body {
     margin: 20px 0;
@@ -93,18 +98,14 @@ body {
 
 #main-content {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
+    width: 100%;
 }
 
 #header {
     display: flex;
     flex-direction: column;
     flex-shrink: 2;
-}
-
-#globe-wrapper {
-    display: flex;
-    flex-direction: row-reverse;
 }
 
 #globe {
@@ -115,9 +116,9 @@ body {
 }
 
 
-#plot {
+#globe-zoom {
     display: flex;
-    width: 100%;
+    width: 80%;
     align-self: flex-end;
 }
 
@@ -157,4 +158,36 @@ body {
 
 #navigation>.icon:hover {
     color: white;
+}
+
+
+/* classes */
+.text-block,
+.text-block-reverse {
+    display: flex;
+    width: 100%;
+    margin: 1em 0;
+    justify-content: space-between;
+}
+
+.text-block {
+    flex-direction: row;
+}
+
+.text-block-reverse {
+    flex-direction: row-reverse;
+}
+
+.text-block p,
+.text-block-reverse p {
+    display: flex;
+    min-width: 30%;
+}
+
+.text-block img,
+.text-block-reverse img {
+    display: flex;
+    max-width: 40%;
+    max-height: 20em;
+    align-self: flex-end;
 }

@@ -1,10 +1,8 @@
-//import { link } from "fs";
-
 //import {parse} from 'papaparse';
-//import {readFileSync} from 'fs';
+//import fs = require("fs");
 
 // /// <reference path="./node_modules/@types/papaparse/index.d.ts" />
-// /// <reference path="./node_modules/@types/node/index.d.ts" />
+// ///<reference path="./node_modules/@types/node/index.d.ts" />
 
 class Startup {
     public static main(): number {
@@ -49,12 +47,42 @@ function clearList(root: any): void {
 }
 
 
+class SearchItem {
+    private _name: string;
+    private _href: string;
+    constructor (name:string, href:string='#') {
+        this._name = name;
+        this._href = href;
+    }
+    get name(): string {
+        return this._name;
+    }
+    set name(newName: string) {
+        this._name = newName;
+    }
+    get href(): string {
+        return this._href;
+    }
+    set href(newHref: string) {
+        this._href = newHref;
+    }
+}
+
+
 function search(): void {
     let input: any = document.getElementById("search-input");
     let filter: string = input.value.toUpperCase();
 
-    let testlist = ['Click through example', 'NCSU', 'Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska']
+    let testlist = ['About Us', 'Click through example', 'NCSU', 'Raleigh', 'Chapel Hill', 'Durham', 'Greensboro', 'Chatanooga', 'Detroit', 'Baltimore', 'Hamilton', 'New Havan', 'North Carolina', 'Vermont', 'Alaska']
     let displayList = document.getElementById("search-results-list")
+
+    let searchList = [];
+    searchList.push(new SearchItem('Home', 'index.html'))
+    searchList.push(new SearchItem('About Us', 'about.html'))
+    searchList.push(new SearchItem('Click through example', 'click_through/home.html'))
+    searchList.push(new SearchItem('Hong Kong', 'detail.html'))
+    searchList.push(new SearchItem('Raleigh', '#'))
+    searchList.push(new SearchItem('Chapel Hill', '#'))
 
     // clear the list
     clearList(displayList);
@@ -65,21 +93,15 @@ function search(): void {
         displayList.style.visibility = 'visible';
     }
 
-    for (let i = 0; i < testlist.length; i++) {
-        let item = testlist[i];
-        if (item.toUpperCase().indexOf(filter) > -1) {
+    for (let i = 0; i < searchList.length; i++) {
+        let item:SearchItem = searchList[i];
+        if (item.name.toUpperCase().indexOf(filter) > -1) {
             let liNode = document.createElement('li');
-            let textNode = document.createTextNode(item);
+            let textNode = document.createTextNode(item.name);
             liNode.appendChild(textNode);
 
             let a = document.createElement('a');
-            if (item.toUpperCase() == 'NCSU') {
-                a.href = 'detail.html';
-            } else if (item.toUpperCase() == 'CLICK THROUGH EXAMPLE') {
-                a.href = 'click_through/home.html';
-            } else {
-                a.href = '#'
-            }
+            a.href = item.href;
             a.append(liNode);
 
             displayList.appendChild(a);
