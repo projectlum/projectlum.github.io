@@ -9,7 +9,7 @@
     <script src="src/bundle.js"></script>
     <!-- <script src="http://www.webglearth.com/v2/api.js"></script> -->
     <script src="src/webglearthapi2.4.2.js"></script>
-    
+
     <script>
       function initialize() {
         var earth = new WE.map('webglearth');
@@ -36,7 +36,7 @@
 <div id="container">
 
     <div id="search-bar" style="position: absolute; width: 200em; max-width: 70%; left:13em;">
-        <input type="text" id="search-input" onkeyup="main.search()" placeholder="Search">
+        <input type="text" id="search-input" onkeyup="main.search(event)" placeholder="Search">
 
         <div id="search-results">
             <ul id="search-results-list">

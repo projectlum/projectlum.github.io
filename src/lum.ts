@@ -60,7 +60,8 @@ class SearchItem {
 }
 
 
-export function search(): void {
+export function search(e:KeyboardEvent): void {
+
     let input: any = document.getElementById("search-input");
     let filter: string = input.value.toUpperCase();
 
@@ -76,7 +77,7 @@ export function search(): void {
 
     // clear the list and return if there is nothing in the search bar
     clearList(displayList);
-    if (filter.length == 0) {
+    if (filter.length == 0 || e.key == 'Escape') {
         displayList.style.visibility = 'hidden';
         return;
     } else {
