@@ -1,7 +1,3 @@
-//import {parse} from 'papaparse';
-//import fs = require("fs");
-// /// <reference path="./node_modules/@types/papaparse/index.d.ts" />
-// ///<reference path="./node_modules/@types/node/index.d.ts" />
 var Startup = /** @class */ (function () {
     function Startup() {
     }
@@ -67,7 +63,7 @@ var SearchItem = /** @class */ (function () {
     });
     return SearchItem;
 }());
-function search() {
+export function search() {
     var input = document.getElementById("search-input");
     var filter = input.value.toUpperCase();
     var displayList = document.getElementById("search-results-list");
@@ -77,7 +73,7 @@ function search() {
     searchList.push(new SearchItem('Click through example', 'click_through/home.html'));
     searchList.push(new SearchItem('Hong Kong', 'detail.html'));
     searchList.push(new SearchItem('Posters', 'posters.html'));
-    searchList.push(new SearchItem('Chapel Hill', ''));
+    searchList.push(new SearchItem('Globe', 'globe.html'));
     // clear the list and return if there is nothing in the search bar
     clearList(displayList);
     if (filter.length == 0) {

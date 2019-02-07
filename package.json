@@ -4,7 +4,8 @@
   "description": "make-a-thon",
   "main": "lum.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && rollup -c"
   },
   "repository": {
     "type": "git",
@@ -21,10 +22,10 @@
     "url": "https://github.com/projectlum/projectlum.github.io/issues"
   },
   "homepage": "https://github.com/projectlum/projectlum.github.io#readme",
-  "dependencies": {
-    "@types/node": "^10.12.21",
-    "@types/papaparse": "^4.5.7",
-    "commonjs": "0.0.1",
-    "papaparse": "^4.6.3"
+  "dependencies": {},
+  "devDependencies": {
+    "rollup": "^1.1.2",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "typescript": "^3.3.1"
   }
 }

@@ -1,8 +1,14 @@
 {
     "compilerOptions": {
+        "noImplicitAny": true,
         "target": "es5",
-        //"module": "commonjs",
         "sourceMap": true,
-        //"lib": ["es5"]
-    }
+        "declaration": true,
+        "module": "es2015",
+        "moduleResolution": "node"
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
 }

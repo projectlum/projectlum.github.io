@@ -6,9 +6,7 @@
 
     <title>LUM</title>
     
-    <script src="bundle.js"></script>
-    <!--<script>var exports = {};</script>-->
-    <script src="lum.js"></script>
+    <script src="src/bundle.js"></script> 
 
     <link rel="shortcut icon" href="graphics/LUM_Tab_Icon_03.png"/>
     <link rel="stylesheet" type="text/css" href="lum.css">
@@ -20,17 +18,15 @@
 
 <div id="navigation">
     <a href="index.html"><i class="button" id="logo"></i></a>
-    <a href="#"><i class="fas fa-bars icon"></i></a>
+    <a href="globe.html"><i class="fas fa-globe-americas icon"></i></a>
     <a href="posters.html"><i class="fas fa-chart-bar icon"></i></a>
-    <a href="#"><i class="fas fa-bookmark icon"></i></a>
-    <a href="#"><i class="fas fa-share-alt icon"></i></a>
     <a href="about.html"><i class="fas fa-info icon"></i></a>
 </div>
 
 <div id="container">
 
     <div id="search-bar">
-        <input type="text" id="search-input" onkeyup="search()" onblur="hideSearchResults()" placeholder="Search">
+        <input type="text" id="search-input" onkeyup="main.search()" onblur="main.hideSearchResults()" placeholder="Search">
 
         <div id="search-results">
             <ul id="search-results-list">

@@ -1,8 +1,3 @@
-//import {parse} from 'papaparse';
-//import fs = require("fs");
-
-// /// <reference path="./node_modules/@types/papaparse/index.d.ts" />
-// ///<reference path="./node_modules/@types/node/index.d.ts" />
 
 class Startup {
     public static main(): number {
@@ -26,7 +21,7 @@ class DataPoint {
 class Community {
     public name = '';
     public type = '';
-    public dataPoints = [];
+    public dataPoints: DataPoint[] = [];
 }
 
 
@@ -65,7 +60,7 @@ class SearchItem {
 }
 
 
-function search(): void {
+export function search(): void {
     let input: any = document.getElementById("search-input");
     let filter: string = input.value.toUpperCase();
 
@@ -77,7 +72,7 @@ function search(): void {
     searchList.push(new SearchItem('Click through example', 'click_through/home.html'))
     searchList.push(new SearchItem('Hong Kong', 'detail.html'))
     searchList.push(new SearchItem('Posters', 'posters.html'))
-    searchList.push(new SearchItem('Chapel Hill', ''))
+    searchList.push(new SearchItem('Globe', 'globe.html'))
 
     // clear the list and return if there is nothing in the search bar
     clearList(displayList);

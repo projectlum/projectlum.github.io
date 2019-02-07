@@ -6,7 +6,15 @@
 
     <title>LUM</title>
     
-    <script src="src/bundle.js"></script> 
+    <script src="src/bundle.js"></script>
+    <script src="http://www.webglearth.com/v2/api.js"></script>
+    <script>
+      function initialize() {
+        var earth = new WE.map('webglearth');
+        WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(earth);
+        document.getElementById('webglearth').style.position = 'absolute'; // necessary b/c the We.map thing will make it relative
+      }
+    </script>
 
     <link rel="shortcut icon" href="graphics/LUM_Tab_Icon_03.png"/>
     <link rel="stylesheet" type="text/css" href="lum.css">
@@ -14,9 +22,9 @@
 
 </head>
 
-<body>
+<body onload="initialize()" style="z-index:-1;">
 
-<div id="navigation">
+<div id="navigation" style="position: absolute;">
     <a href="index.html"><i class="button" id="logo"></i></a>
     <a href="globe.html"><i class="fas fa-globe-americas icon"></i></a>
     <a href="posters.html"><i class="fas fa-chart-bar icon"></i></a>
@@ -25,7 +33,7 @@
 
 <div id="container">
 
-    <div id="search-bar">
+    <div id="search-bar" style="position: absolute; width: 200em; max-width: 70%; left:13em;">
         <input type="text" id="search-input" onkeyup="main.search()" placeholder="Search">
 
         <div id="search-results">
@@ -35,13 +43,26 @@
         </div>
     </div>
 
-    <div id="main-content">
-
-        <div id="globe-zoom" style="content:url(graphics/Lum_Globe_02_Zoom_01.png);"></div>
-
-    </div>
+    <div id="main-content"><div id="webglearth" style="z-index: -1;"></div></div>
     
 </div>
 
+
+
+
+
 </body>
+</html>
+
+
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    
+    
+  </head>
+  <body onload="initialize()">
+    
+  </body>
 </html>
